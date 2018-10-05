@@ -1,1 +1,0 @@
-Hello World!Hello ${user.username}!Hello undefined!Hello undefined!Hello undefined! Your age 25

@@ -1,18 +1,21 @@
 console.log('Starting app.js');
 
 const fs = require('fs');
-const os = require('os');
-const notes = require('./notes.js');
 const _ = require('lodash');
+const yargs = require('yargs');
 
-console.log(_.uniq([2,1,1]));
+const notes = require('./notes.js');
 
-// console.log(_.isString('Fehmi'));
-// console.log(_.isString(true));
-// console.log(_.isString(1));
+const argv = yargs.argv;
 
-
-// console.log('Result: ', notes.add(9, -2));
-
-// var user = os.userInfo;
-// fs.appendFileSync('greetings.txt', `Hello ${user.username}! Your age ${notes.age}`);
+if(argv._[0] === 'add'){
+    notes.addNote(argv.title, argv.body);
+}else if(argv._[0] === 'list'){
+    notes.getAll()
+}else if(argv._[0] === 'read'){
+    notes.readNote(argv.title);
+}else if(argv._[0] === 'remove'){
+    notes.removeNote(argv.title);
+}else{
+    console.log('Not recognized');
+}
