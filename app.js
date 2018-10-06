@@ -42,7 +42,6 @@ if(argv._[0] === 'add'){
 }else if(argv._[0] === 'list'){
     var allNotes = notes.getAll();
     console.log(`Printing ${allNotes.length} note(s)`);
-    console.log('--------------------');
     allNotes.forEach((x) => notes.logNote(x));
 }else if(argv._[0] === 'read'){
     var note = notes.getNote(argv.title);
