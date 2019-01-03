@@ -57,7 +57,7 @@ var removeNote = (title) => {
 
 var logNote = (note) => {
     if(note){
-        console.log('--------------------');
+        console.log('---------------------');
         console.log(`Title: ${note.title}`);
         console.log(`Body: ${note.body}`);
     }else{
